@@ -69,12 +69,9 @@ if(json.exists){
 }
    else {
          errors[5]=1;
-         if(input.parentNode.parentNode.querySelector(".errore")!==null){
-         const errorstring = input.parentNode.parentNode.querySelector(".errore");
-         errorstring.remove();
          }
          
-   }
+   
 }
 
 
@@ -103,7 +100,7 @@ function controlloEmail(event){
         const errorstring=event.currentTarget.parentNode.parentNode.querySelector(".errore");
         errorstring.remove();
         errors[2]=1;
-      }
+        }
         fetch(BASE_URL + 'register/email/'+encodeURIComponent(String(event.currentTarget.value).toLowerCase())).then(fetchResponse, onError).then(jsoncontrolloEmail);
       }
 }
